@@ -16,6 +16,61 @@
 
 ---
 
+## 最佳实践
+
+### 准备工作
+
+下载项目选择的模板项目到本地
+
+前端推荐使用 [ant-design-pro](https://github.com/ant-design/ant-design-pro)
+
+```
+git clone https://github.com/ant-design/ant-design-pro.git
+```
+
+后端可以使用任何自己熟悉语言的框架或已有项目
+
+### 📂 项目结构规范
+
+创建项目目录，然后规划各子目录，以下只是一个建议，可以根据自己的习惯组织，清晰的目录结构有助于最终的代码组织
+
+以下是经过验证的标准项目结构方案，建议开发者按此规范组织代码（可根据项目规模适当调整）：
+
+```bash
+├── 📁 docs/                    # 项目文档中心
+│   ├── requirements/          # 需求文档（用户故事/功能需求/验收标准）
+│   ├── designs/               # 设计文档（架构图/API设计/DB设计）
+│   └── references/            # 第三方API文档/技术参考资料
+
+├── 📁 backend/                # 后端服务（以Python为例）
+│   ├── src/                   # 核心代码
+│   ├── config/                # 环境配置
+│   └── tests/                 # 单元测试 & E2E测试
+
+├── 📁 frontend/               # 前端工程（基于 Ant Design Pro）
+│   ├── config/                # 项目配置
+│   ├── mock/                  # 本地Mock数据
+│   └── src/                   # 页面组件与业务逻辑
+│   └── ...                    # 其他目录和文件
+
+├── 📁 sdk/                    # 第三方服务SDK
+│   ├── payment/               # 支付服务封装
+│   ├── cloud-storage/         # 云存储服务
+│   └── social-login/          # 社交登录集成
+
+├── 📄 README.md               # 项目门户文档（需包含：快速开始/环境要求/部署指南）
+└── 📄 CHANGELOG.md            # 版本更新日志
+```
+
+#### 文档规范
+1. **文档管理**：所有文档必须使用 Markdown 格式，遵循「文档即代码」原则
+2. **版本同步**：需求文档与代码实现保持版本对应（通过 git tag 关联）
+3. **协作规范**：设计文档需包含决策记录（ADR）和架构图例
+
+### vibe coding
+
+开始你的vibe coding之旅...
+
 ## 🚀 完整开发流程
 
 ### 1. 需求文档 (Requirements Documentation)
