@@ -37,10 +37,10 @@ git clone https://github.com/ant-design/ant-design-pro.git
 以下是经过验证的标准项目结构方案，建议开发者按此规范组织代码（可根据项目规模适当调整）：
 
 ```bash
-├── 📁 docs/                    # 项目文档中心
-│   ├── requirements/          # 需求文档（用户故事/功能需求/验收标准）
-│   ├── designs/               # 设计文档（架构图/API设计/DB设计）
-│   └── references/            # 第三方API文档/技术参考资料
+├── 📁 .docs/                   # 项目文档中心
+│   ├── 01-需求文档/               # 需求文档（用户故事/功能需求/验收标准）
+│   ├── 02-设计文档/               # 设计文档（架构图/API设计/DB设计）
+│   └── 03-参考资料/               # 第三方API文档/技术参考资料
 
 ├── 📁 backend/                # 后端服务（以Python为例）
 │   ├── src/                   # 核心代码
@@ -70,6 +70,47 @@ git clone https://github.com/ant-design/ant-design-pro.git
 ### vibe coding
 
 开始你的vibe coding之旅...
+
+#### 使用 CLI 工具快速开始
+
+我们提供了一个便捷的 CLI 工具来初始化文档目录结构：
+
+```bash
+# 安装 CLI 工具（在 docf-cli 目录下）
+cd docf-cli
+npm install
+npm link
+
+# 在项目目录中初始化文档结构
+cd ..
+docf init
+```
+
+CLI 工具会自动创建 `.docs` 目录并生成以下文档模板：
+
+**基础模式（默认）**：
+- 📋 01-需求文档/（用户故事、功能需求、非功能需求）
+- 🏗️ 02-设计文档/（架构设计、API设计、数据库设计、架构决策记录）
+- 📚 03-参考资料/
+
+**完整模式（`--extended`）**：
+除了基础文档外，还包含：
+- 📅 04-规划文档/（路线图、里程碑、迭代计划/、任务分解/）
+- 💻 05-开发文档/（编码规范、Git工作流、AI交互记录、代码审查/）
+- 🧪 06-测试文档/（测试策略、测试用例/、Bug跟踪）
+- 🔍 07-上下文管理/（项目索引、代码索引、领域知识、AI提示词库）
+- 🚀 08-部署文档/（环境配置、CI/CD、Docker、监控、安全）
+- ⚙️ 09-运维文档/（运行手册、事故响应、性能调优）
+
+```bash
+# 使用完整模式
+docf init --extended
+```
+
+更多详情请查看：
+- [CLI 工具说明](docf-cli/README.md)
+- [优化方案](OPTIMIZATION_PLAN.md)
+- [优化总结](SUMMARY.md)
 
 ## 🚀 完整开发流程
 
